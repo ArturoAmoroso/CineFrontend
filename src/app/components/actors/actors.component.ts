@@ -16,8 +16,8 @@ export class ActorsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.actors = this.apiService.getActors();
-    // this.apiService.getActors().subscribe(actors => this.actors = actors);
+    // this.actors = this.apiService.getActors();
+    this.apiService.getActors().subscribe(actors => this.actors = actors);
   }
 
 }
