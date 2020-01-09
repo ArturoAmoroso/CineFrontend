@@ -5,5 +5,6 @@ export class Actor {
     name: string;
     lastname: string;
     age: number;
+    imgURL: string;
     movies?: Movie[];
 }

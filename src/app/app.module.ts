@@ -6,17 +6,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ActorsComponent } from './components/actors/actors.component';
 import { ActorsItemComponent } from './components/actors-item/actors-item.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { AddActorComponent } from './components/add-actor/add-actor.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
     AppComponent,
     ActorsComponent,
-    ActorsItemComponent
+    ActorsItemComponent,
+    HeaderComponent,
+    AddActorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
