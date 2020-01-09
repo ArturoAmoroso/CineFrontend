@@ -1,1 +1,2 @@
-<p>winners works!</p>
+<app-winners-item *ngFor="let winner of winners" [winner]="winner" (deleteWinnerOut)="deleteWinner($event)" >
+</app-winners-item>

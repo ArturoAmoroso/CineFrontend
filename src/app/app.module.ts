@@ -14,6 +14,7 @@ import { WinnersComponent } from './components/winners/winners.component';
 import { ActorDetailComponent } from './components/actor-detail/actor-detail.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MoviesItemComponent } from './components/movies-item/movies-item.component';
+import { WinnersItemComponent } from './components/winners-item/winners-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MoviesItemComponent } from './components/movies-item/movies-item.compon
     WinnersComponent,
     ActorDetailComponent,
     MoviesComponent,
-    MoviesItemComponent
+    MoviesItemComponent,
+    WinnersItemComponent
   ],
   imports: [
     BrowserModule,

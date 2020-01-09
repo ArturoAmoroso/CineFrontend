@@ -3,6 +3,7 @@ export class Movie{
     name: string;
     duration: number;
     genre: string;
-    imgUrl: number;
+    year: number;
+    imgURL: string;
     actorId: number;
 }

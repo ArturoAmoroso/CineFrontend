@@ -10,6 +10,7 @@ export class MoviesItemComponent implements OnInit {
   @Input() movie: Movie;
   @Output() deleteMovieOut: EventEmitter<Movie> = new EventEmitter();
   @Output() editMovieOut: EventEmitter<Movie> = new EventEmitter();
+  @Output() addMovieOut: EventEmitter<Movie> = new EventEmitter();
 
   constructor() { }
 
@@ -22,6 +23,10 @@ export class MoviesItemComponent implements OnInit {
 
   onEdit(movie: Movie){
     this.editMovieOut.emit(movie);
+  }
+
+  onAdd(movie: Movie){
+    this.addMovieOut.emit(movie);
   }
 
 }

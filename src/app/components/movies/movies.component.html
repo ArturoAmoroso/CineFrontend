@@ -3,13 +3,13 @@
     <div>Register</div>
 </button>
 
-<app-movies-item *ngFor="let movie of movies" [movie]="movie" (deleteMovieOut)="deleteMovie($event)" (editMovieOut)="editMovie($event)">
+<app-movies-item *ngFor="let movie of movies" [movie]="movie" (deleteMovieOut)="deleteMovie($event)" (editMovieOut)="editMovie($event)" (addMovieOut)="addWinner($event)">
 </app-movies-item>
 
 <ng-template #movieModal>
     <div class="modal-header">
         <h4 class="modal-title" id="modal-title">Register a movie</h4>
-        <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="closeActorModal()">
+        <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="closeMovieModal()">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
@@ -19,16 +19,21 @@
             <input type="text" class="form-control" [(ngModel)]="movie.name" placeholder="Name"/>
         </label>
         <br>
-        <label>Duration:
-            <input type="text" class="form-control" [(ngModel)]="movie.duration" placeholder="Duration"/>
-        </label>
-        <br>
         <label>Genre:
             <input type="text" class="form-control" [(ngModel)]="movie.genre" placeholder="Genre"/>
         </label>
         <br>
+        <label>Year:
+            <input type="text" class="form-control" [(ngModel)]="movie.year" placeholder="Genre"/>
+        </label>
+        <br>
+        <label>Duration:
+            <input type="text" class="form-control" [(ngModel)]="movie.duration" placeholder="Duration"/>
+        </label>
+        <br>
         <label>Image URL:
-            <input type="text" class="form-control" [(ngModel)]="movie.imgUrl" placeholder="Image URL http://"/>
+            <input type="text" class="form-control" [(ngModel)]="movie.imgURL" placeholder="Image URL http://" />
+            <!-- <textarea class="form-control" cols="30" rows="10" [(ngModel)]="movie.imgUrl" placeholder="Image URL http://"></textarea> -->
         </label>
     </div>
     <div class="modal-footer">

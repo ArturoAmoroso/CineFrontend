@@ -8,11 +8,12 @@
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title">{{movie.name}}</h5>
-                <p class="card-text">{{movie.genre}}</p>
+                <p class="card-text">Genre: {{movie.genre}}</p>
+                <p class="card-text">Year: {{movie.year}}</p>
                 <p class="card-text"><small class="text-muted">Duration: {{movie.duration}} min</small></p>
             </div>
 
-            <button type="button" class="btn btn-light">
+            <button type="button" class="btn btn-light" (click)="onAdd(movie)">
                 <img class="icon" src="../../assets/images/oscars.png" alt="edit icon" > Agregar
             </button>
 

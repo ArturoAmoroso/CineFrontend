@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Actor } from '../models/Actor';
 import { Movie } from '../models/Movie';
+import { Winner } from '../models/Winner';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type':'application/json'})
@@ -17,6 +18,7 @@ export class ApiService {
   }
 
   actorsUrl:string = 'https://localhost:44305/api/actors';
+  winnersUrl:string = 'https://localhost:44305/api/winners';
 
   getActors():Observable<Actor[]>{
     return this.http.get<Actor[]>(this.actorsUrl);
@@ -41,7 +43,7 @@ export class ApiService {
     return this.http.get<Actor>(actorUrl);
   }
 
-
+  // MOVIES
   getMovies(idActor: number): Observable<Movie[]>{
     const moviesUrl:string = `${this.actorsUrl}/${idActor}/movies`;
     return this.http.get<Movie[]>(moviesUrl);
@@ -62,22 +64,18 @@ export class ApiService {
     return this.http.put<Actor>(movieUrl, movie);
   }
 
+  // WINNNERS
+  getWinners():Observable<Winner[]>{
+    return this.http.get<Winner[]>(this.winnersUrl);
+  }
 
-  // getActors():Actor[]{
-  //   return [
-  //     {
-  //       id: 1,
-  //       name: "Jared",
-  //       lastname: "Leto",
-  //       age: 37
-  //     },
-  //     {
-  //       id: 2,
-  //       name: "Nicolas",
-  //       lastname: "Kage",
-  //       age: 45
-  //     }
-  //   ]
-  // }
+  deleteWinner(winner: Winner): Observable<boolean>{
+    const winnerUrl:string = `${this.winnersUrl}/${winner.id}`;
+    return this.http.delete<boolean>(winnerUrl);
+  }
+
+  addWinner(winner: Winner): Observable<Winner>{
+    return this.http.post<Winner>(this.winnersUrl, winner);
+  }
 
 }

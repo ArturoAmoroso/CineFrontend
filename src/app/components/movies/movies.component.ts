@@ -3,6 +3,7 @@ import { Actor } from 'src/app/models/Actor';
 import { Movie } from 'src/app/models/Movie';
 import { ApiService } from '../../services/api.service'
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Winner } from 'src/app/models/Winner';
 
 @Component({
   selector: 'app-movies',
@@ -13,6 +14,7 @@ export class MoviesComponent implements OnInit {
   @Input() actor: Actor;
   movies: Movie[];
   movie: any;
+  winner: any;
 
   @ViewChild('movieModal', {static: false}) movieModal;
   private modalReference: any;
@@ -55,7 +57,7 @@ export class MoviesComponent implements OnInit {
 
   editMovie(movieInput: Movie){
     this.movie = movieInput;
-    console.log(movieInput);
+    console.log(this.movie);
     this.modalReference = this.modalService.open(this.movieModal);
   }
 
@@ -79,8 +81,25 @@ export class MoviesComponent implements OnInit {
     this.movie = {};
     this.movie.name = "";
     this.movie.duration = null;
+    this.movie.year = null;
     this.movie.genre = "";
     this.movie.imgURL = "";
     this.movie.actorId = this.actor.id;
+  }
+
+  addWinner(movie: Movie){
+    this.winner = {};
+    this.winner.name = this.actor.name;
+    this.winner.lastname = this.actor.lastname;
+    this.winner.movie = movie.name;
+    this.winner.year = movie.year;
+    this.winner.imgUrlActor = this.actor.imgURL;
+    this.winner.imgUrlMovie = movie.imgURL;
+
+    this.apiService.addWinner(this.winner).subscribe( a => {
+      console.log(a);
+      alert('Winner created');
+    });
+    
   }
 }
