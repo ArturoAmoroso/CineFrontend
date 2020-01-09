@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Actor } from 'src/app/models/Actor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-actors-item',
@@ -12,7 +13,7 @@ export class ActorsItemComponent implements OnInit {
   @Output() editActorOutput: EventEmitter<Actor> = new EventEmitter();
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,6 +26,10 @@ export class ActorsItemComponent implements OnInit {
 
   onEdit(actor: Actor){
     this.editActorOutput.emit(actor);
+  }
+
+  onDetail(actor: Actor){
+    this.router.navigateByUrl(`actors/${actor.id}`)
   }
 
 }

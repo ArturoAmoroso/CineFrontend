@@ -34,5 +34,16 @@ button.edit {
     padding: 1px;
 }
 
+/* .card-img{
+    height: 175px;
+    width: auto;
+} */
 
+.col-md-4{
+    cursor: pointer;
+}
+
+.card-title{
+    cursor: pointer;
+}
 

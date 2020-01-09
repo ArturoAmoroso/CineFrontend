@@ -1,11 +1,10 @@
+<h1>Actors</h1>
 <button class="btn btn-warning" (click)="openActorModal()">
-    <div>Registrar</div>
+    <div>Register</div>
 </button>
 
 <app-actors-item *ngFor="let actor of actors" [actor]="actor" (deleteActorOutput)="deleteActor($event)" (editActorOutput)="editActor($event)">
-
 </app-actors-item>
-
 
 <ng-template #actorModal>
     <div class="modal-header">
@@ -33,7 +32,9 @@
         </label>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="closeActorModal()">Cancelar</button>
-        <button type="button" class="btn btn-warning" (click)="postActorModal()">Guardar</button>
+        <button type="button" class="btn btn-secondary" (click)="closeActorModal()">Cancel</button>
+        <button type="button" class="btn btn-warning" (click)="postActorModal()">Save</button>
     </div>
 </ng-template>
+
+

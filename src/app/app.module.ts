@@ -7,10 +7,13 @@ import { AppComponent } from './app.component';
 import { ActorsComponent } from './components/actors/actors.component';
 import { ActorsItemComponent } from './components/actors-item/actors-item.component';
 import { HeaderComponent } from './components/layout/header/header.component';
-import { AddActorComponent } from './components/add-actor/add-actor.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { WinnersComponent } from './components/winners/winners.component';
+import { ActorDetailComponent } from './components/actor-detail/actor-detail.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { MoviesItemComponent } from './components/movies-item/movies-item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { FormsModule } from '@angular/forms'
     ActorsComponent,
     ActorsItemComponent,
     HeaderComponent,
-    AddActorComponent
+    WinnersComponent,
+    ActorDetailComponent,
+    MoviesComponent,
+    MoviesItemComponent
   ],
   imports: [
     BrowserModule,

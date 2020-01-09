@@ -32,7 +32,7 @@ export class ActorsComponent implements OnInit {
         if (r == true)
         {
           this.actors = this.actors.filter(a => a.id !== actor.id);
-          return alert('Actor eliminado');
+          return alert('Actor deleted');
         }
         else return alert('No se puede eliminar el actor');
       });
